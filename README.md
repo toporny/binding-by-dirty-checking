@@ -28,5 +28,5 @@ Next creates "listToWatch" array with similar structure:
 ```
 This array stores ID and attribute for each observable element; it's helpful for quick determine ID when observer recognizes any change in model object.
 
-Next, when element's ID is found, script change attribute for new value.
+Next, when element's ID is found, script changes attribute for new value.
 
