@@ -98,8 +98,7 @@ DataBind.prototype.addID = function(element, node) {
         element.setAttribute("data-binding-id", ctr);
         return ''+ctr;
     } else {
-        var aa = element.getAttribute("data-binding-id");
-        return aa;
+        return element.getAttribute("data-binding-id");
     } 
 }
 
