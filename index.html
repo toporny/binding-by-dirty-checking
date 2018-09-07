@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Binding by dirty checking</title>
+<script type="text/javascript" src="js.js"></script>
+</head>
+
+<body>
+
+<h1 data-bind="label1" data-bind-title="x1.y1.z1" data-bind-alt="label1">h1 h1 h1 h1 h1</h1> 
+<h2 data-bind="label1" data-bind-title="x1.y1.z1" data-bind-alt="label1">h2 h2 h2 h2 h2</h2> 
+<h3 data-bind="label1" data-bind-title="x1.y1.z1" data-bind-alt="label1">h3 h3 h3 h3 h3</h3> 
+<h4 data-bind="x1.y1.z1" data-bind-title="x1.y1.z1" data-bind-alt="label1">h4 h4 h4 h4 h4</h4> 
+<p data-bind="label3" data-bind-title="x3.y3.z3" data-bind-alt="label3">p p p p p p p p p</p> <br> 
+<a data-bind="label2" data-bind-href="x2.y2.z2">a href x2.y2.z2</a> <br> 
+<a data-bind="label3" data-bind-href="x3.y3.z3">x3.y3.z3 link</a> <br> 
+
+<p>
+    try to change model data from console:
+    <pre>
+    model.label1 = 'label1 changed';
+    model.label2 = 'label2 changed';
+    model.label3 = 'label3 changed';
+
+    model.x1.y1.z1 = 'deep object x1.y1.z1 changed';
+    model.x2.y2.z2 = 'deep object x2.y2.z2 changed';
+    model.x3.y3.z3 = 'deep object x3.y3.z3 changed';
+    </pre>
+</p>
+
+<script>
+
+var model = {
+    label1: "Schibsted",
+    x1: {
+        y1: {
+            z1: "some nested property to bind"
+        }
+    },  
+    label2: "www.onet.pl",
+    x2: {
+        y2: {
+            z2: "http://onet.pl"
+        }
+    },
+    label3: "initial link for x3 y3 z3",
+    x3: {
+        y3: {
+            z3: "http://initial.link.for.x3.y3.z3"
+        }
+    }
+}
+
+
+
+ var obj = new DataBind(model);
+
+</script>
+
+</body>
+</html>
+
